@@ -9,3 +9,9 @@ Exporting and validating your design.
 ## Step 2: Exporting
 - **Action:** Select your final Body and export as `.STL` (for printing) or `.DXF` (for laser cutting).
 - **Goal:** Ready for physical fabrication.
+
+---
+
+## 📝 Progress Tracking
+- **Action:** Update `completion.md` in the root directory to reflect that you have completed Module 6.
+- **Goal:** Maintain an accurate record of your progress.

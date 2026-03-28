@@ -18,3 +18,9 @@ Modeling the heart of the arci console.
 - **Action:** Use the **Symmetry** constraint to center them.
 - **Action:** Constrain the spacing to 58mm x 49mm (per `component_specs.md`).
 - **Goal:** Precision placement of holes.
+
+---
+
+## 📝 Progress Tracking
+- **Action:** Update `completion.md` in the root directory to reflect that you have completed Module 2.
+- **Goal:** Maintain an accurate record of your progress.

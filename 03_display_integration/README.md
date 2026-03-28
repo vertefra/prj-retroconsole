@@ -12,3 +12,9 @@ Modeling the cutout and mount for the HMTECH 7" screen.
 - **Action:** Sketch the negative space (the hole the screen will fit through).
 - **Action:** Add a 1mm offset for "Tolerance" so the screen isn't too tight.
 - **Goal:** Design the primary viewing window.
+
+---
+
+## 📝 Progress Tracking
+- **Action:** Update `completion.md` in the root directory to reflect that you have completed Module 3.
+- **Goal:** Maintain an accurate record of your progress.

@@ -21,5 +21,13 @@ Each folder below contains a step-by-step tutorial for a specific phase of the d
 5.  **[05_enclosure_design](05_enclosure_design/README.md)**: Modeling the console shell and final assembly.
 6.  **[06_manufacturing_prep](06_manufacturing_prep/README.md)**: Final inspection and exporting files for 3D printing/laser cutting.
 
+## 📝 Project State Tracking
+To maintain continuity between agent sessions, this repository uses a `completion.md` file (ignored by Git).
+
+> [!IMPORTANT]
+> **Agent First Action:**
+> The first thing an agent should do is check for the existence of `completion.md` in the root directory. If it does not exist, create it.
+> This file should be updated after every significant step or chapter completion to record the current state of the tutorial.
+
 ---
 *Last Updated: 2026-03-28*

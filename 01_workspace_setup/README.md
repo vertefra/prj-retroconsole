@@ -18,3 +18,9 @@ This module covers setting up your professional CAD environment on Linux.
 - **Action:** Locate the Workbench selector at the top center.
 - **Action:** Switch between `Section`, `PartDesign`, and `Sketcher` to see how the toolbars change.
 - **Goal:** Understand where the specialized tools live.
+
+---
+
+## 📝 Progress Tracking
+- **Action:** Update `completion.md` in the root directory to reflect that you have completed Module 1.
+- **Goal:** Maintain an accurate record of your progress.

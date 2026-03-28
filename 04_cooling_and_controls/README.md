@@ -11,3 +11,9 @@ Integrating active cooling (iUniker fan) and arcade inputs.
 - **Action:** Use your drawing tablet to trace your ideal button layout.
 - **Action:** Create 30mm holes for main buttons and 24mm for start/select.
 - **Goal:** Design a comfortable ergonomic control surface.
+
+---
+
+## 📝 Progress Tracking
+- **Action:** Update `completion.md` in the root directory to reflect that you have completed Module 4.
+- **Goal:** Maintain an accurate record of your progress.

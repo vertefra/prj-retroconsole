@@ -10,3 +10,9 @@ Finalizing the arci shell.
 ## Step 2: Port Cutouts
 - **Action:** Reference `component_specs.md` to create the USB and Power cutouts.
 - **Goal:** External connectivity.
+
+---
+
+## 📝 Progress Tracking
+- **Action:** Update `completion.md` in the root directory to reflect that you have completed Module 5.
+- **Goal:** Maintain an accurate record of your progress.
