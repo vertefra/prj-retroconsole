@@ -5,7 +5,7 @@ A **parametric model of the Raspberry Pi 4 board** in CAD: the **PCB outline** (
 
 ## Pi model dimensions (reference)
 
-Single place for **numbers the Pi model uses** today. Keep them aligned with [component_specs.md](../component_specs.md) §1 and the [mechanical drawing](https://datasheets.raspberrypi.com/rpi4/raspberry-pi-4-mechanical-drawing.pdf). **Extend this table** when you add ports, keepouts, or more spreadsheet-driven geometry—add a row here and a matching **cell alias** in the spreadsheet, then reference it from sketches or Pad via **`fx`** (e.g. `Spreadsheet001.Pi_Hole_Pitch_X`).
+Single place for **numbers the Pi model uses** today. Keep them aligned with [component_specs.md](../component_specs.md) §1 and the [mechanical drawing](https://datasheets.raspberrypi.com/rpi4/raspberry-pi-4-mechanical-drawing.pdf). **Extend this table** when you add ports, keepouts, or more spreadsheet-driven geometry—add a row here and a matching **cell alias** in the spreadsheet, then reference it from sketches or Pad via **`fx`** (e.g. `Spreadsheet_Pi.Pi_Hole_Pitch_X`).
 
 | Quantity | Value (mm) | Spreadsheet alias in this course | Where it appears |
 |----------|------------|----------------------------------|------------------|
@@ -24,17 +24,20 @@ Single place for **numbers the Pi model uses** today. Keep them aligned with [co
 
 ## Organize the tree (rename things)
 
-A **readable Model tree** is part of the workflow: you always know which object is the Pi, which sketch is the board outline, and expressions still use the **spreadsheet object name** (e.g. `Spreadsheet001`)—renaming the **Body** does not break `Spreadsheet001.Pi_Width`.
+A **readable Model tree** is part of the workflow: you always know which object is the Pi, which sketch is the board outline, and expressions still use the **spreadsheet object name** (e.g. `Spreadsheet_Pi`)—renaming the **Body** does not break `Spreadsheet_Pi.Pi_Width`.
 
 **How to rename:** In the **Model** tree, click an object, press **F2**, type the new name, Enter—or **right‑click → Rename** (wording varies by version).
 
-**Where the spreadsheet lives:** The spreadsheet should sit **under the document** (`Unnamed` / your file name), **sibling** to **Bodies**—**not** nested inside a **Body**. If yours ended up inside `Body`, **drag** it to the document root in the tree.
+**Where the spreadsheet lives (tree):** **Prefer** the spreadsheet as a **direct child of the document**—same level as **`Body_Pi`** / **`Pi_Board`**, not nested inside the Body. That keeps the tree easy to read.
+
+- **If drag-and-drop to the document line fails:** Some FreeCAD versions (and some Linux builds) **do not** let you reparent a spreadsheet, or tree drags are buggy. **You can still continue the course:** constraints and **`fx`** expressions use the **spreadsheet object’s name** (e.g. `Spreadsheet_Pi.Pi_Width`), not “how deep” it sits in the tree. A sheet left **under** a Body is **OK** if your build won’t move it.
+- **To improve the odds it lands at document level:** In the **Model** tree, **click the document node** (your file name at the **top**) so it is selected—**not** a Body or sketch. Then switch to the **Spreadsheet** workbench and **create** the spreadsheet. **Module 2 Step 1 is before Step 2’s Body** so the sheet is usually created when no Body exists yet; if you already have a Body, select the **document** first, then insert the sheet.
 
 **Suggested names for Module 2** (adjust if you prefer; stay consistent for later modules):
 
 | Object | Suggested name | When |
 |--------|----------------|------|
-| Spreadsheet | `Spreadsheet_arci` (or keep `Spreadsheet001` and rename only bodies) | After creating it (Step 1) |
+| Spreadsheet (Pi board parameters) | **`Spreadsheet_Pi`** (or keep `Spreadsheet001` if you prefer; use that name in `fx` expressions) | After creating it (Step 1) |
 | Part Design Body | `Body_Pi` or `Pi_Board` | After creating the Body (Step 2) |
 | Board + holes sketch | `Sketch_Pi_board` | After creating the sketch (Step 2–3) |
 | Pad | `Pad_Pi_board` | After Step 4 |
@@ -44,13 +47,13 @@ Later modules add more **Bodies** (`Body_Bezel`, `Body_Shell`, …) using the sa
 
 ## Step 1: Parametric Spreadsheet
 - **Action:** Go to the `Spreadsheet` workbench and create a new spreadsheet.
-- **Concept:** A **named value** is a **cell alias**. The number stays **in the cell**; the alias is a label you set in that cell’s **Properties** so constraints and expressions can refer to it (e.g. `Spreadsheet.Pi_Width`). If your sheet is auto-named `Spreadsheet001`, use that object name instead of `Spreadsheet`.
+- **Concept:** A **named value** is a **cell alias**. The number stays **in the cell**; the alias is a label you set in that **cell’s** property panel (often **Data** → **Alias**, or “cell Properties” in the combo view)—**not** the name of the spreadsheet **object** in the tree. Expressions refer to **`ObjectName.Alias`** (e.g. `Spreadsheet_Pi.Pi_Width`). If your sheet is still auto-named `Spreadsheet001`, use that object name in `fx` until you rename the sheet.
 - **Action:** Select a cell (e.g. **A1**), type **`85`**, press Enter.
 - **Action:** With the cell still selected, open **Properties** and set **Alias** to **`Pi_Width`** (use a valid identifier: letters, digits, underscore; no spaces).
 - **Action:** Repeat for height: e.g. **A2** → value **`56`** → alias **`Pi_Height`**.
 - **Note:** You are **not** typing `Pi_Width = 85` into the cell—that phrase only describes the idea. The cell holds **`85`**; **`Pi_Width`** is the separate **Alias** field.
 - **Goal:** Board dimensions live in the spreadsheet so you can change them later without redrawing manually.
-- **Action — name it:** Rename the spreadsheet object in the tree (e.g. **`Spreadsheet_arci`**) and confirm it sits **at document root**, not inside a Body ([details](#organize-the-tree-rename-things)).
+- **Action — name it:** Rename the spreadsheet **object** in the tree to **`Spreadsheet_Pi`** (this is the **Pi board** parameter sheet; Module 3 adds a separate **`Spreadsheet_Bezel`** for the display). Prefer **document root** in the tree ([details](#organize-the-tree-rename-things)); if it stays inside a Body and you cannot move it, keep going.
 - **See also:** [Pi model dimensions (reference)](#pi-model-dimensions-reference) for the full list and future aliases.
 
 ## Step 2: Initial Sketch
@@ -64,7 +67,7 @@ Later modules add more **Bodies** (`Body_Bezel`, `Body_Shell`, …) using the sa
 - **Action:** Draw a rectangle and add **dimensional** constraints so width and height come from the spreadsheet:
     - Use **Horizontal dimension** and **Vertical dimension** in the Sketcher toolbar (names may appear as such in the tooltip).
     - **Select a line** for each dimension—the line highlights **blue** when selected; apply one tool for board **width**, the other for **height** (match each to the correct edge orientation).
-    - When the dimension dialog appears, click **`fx`** (expression editor). That opens the field where you can type or pick **`Spreadsheet…`** with autocompletion, then the alias (e.g. `Spreadsheet001.Pi_Width` / `Spreadsheet001.Pi_Height`—use your sheet’s name from the tree). You may not see spreadsheet completion until **`fx`** is used.
+    - When the dimension dialog appears, click **`fx`** (expression editor). That opens the field where you can type or pick **`Spreadsheet…`** with autocompletion, then the alias (e.g. `Spreadsheet_Pi.Pi_Width` / `Spreadsheet_Pi.Pi_Height`—use your sheet’s **object** name from the tree). You may not see spreadsheet completion until **`fx`** is used.
 - **Goal:** Create the basic PCB footprint.
 - **Note (shape):** A plain **rectangle** is fine for clearance checks. The real Pi 4 PCB has **3.0 mm** radius on all four outer corners ([component_specs.md](../component_specs.md)). To match that in 3D, easiest path is often: **Pad** first, then **Part Design → Fillet** the **four vertical outer corner edges** of the slab with radius **3.0 mm** (or rebuild the outline with sketch arcs).
 
@@ -114,9 +117,9 @@ If FreeCAD complains the sketch is **over-constrained**, remove one duplicate ru
 
 ## Step 4: Board thickness (Pad)
 
-- **Action:** Close the sketch. In **Part Design**, with the sketch selected under **Body**, use **Pad** and set length to **1.6 mm** (typical PCB thickness), or to **`Spreadsheet001.Pi_PCB_Thickness`** once you add that alias (see [reference table](#pi-model-dimensions-reference)).
+- **Action:** Close the sketch. In **Part Design**, with the sketch selected under **Body**, use **Pad** and set length to **1.6 mm** (typical PCB thickness), or to **`Spreadsheet_Pi.Pi_PCB_Thickness`** once you add that alias (see [reference table](#pi-model-dimensions-reference); use your sheet’s name if it differs).
 - **Action — rename the Pad:** e.g. **`Pad_Pi_board`** ([naming guide](#organize-the-tree-rename-things)).
-- **Optional — rounded board outline:** Select the **Pad** in the tree, then **Fillet** and pick the **four outer vertical edges** where side faces meet (the “rim” corners). Set radius to **3.0 mm** (or `Spreadsheet001.Pi_PCB_Corner_Radius` if you add it).
+- **Optional — rounded board outline:** Select the **Pad** in the tree, then **Fillet** and pick the **four outer vertical edges** where side faces meet (the “rim” corners). Set radius to **3.0 mm** (or `Spreadsheet_Pi.Pi_PCB_Corner_Radius` if you add it).
 - **Action — rename the Fillet:** e.g. **`Fillet_Pi_corners`** (if you used one fillet for all four edges; otherwise rename each feature so the tree stays readable).
 - **Goal:** A thin solid board with through-holes (if the sketch inner circles are treated as holes by your Pad).
 

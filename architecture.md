@@ -8,7 +8,7 @@ Read this **before** or **right after** Module 1 if you want the whole picture: 
 
 ## FreeCAD file habit (naming the tree)
 
-Use **one `.FCStd` document** for the whole console while you follow the course, **one spreadsheet** at **document root** (not inside a Body), and **rename** Bodies and major features so the tree stays readable. Module 2 spells out suggested names and **F2** renaming in **[Organize the tree (rename things)](02_pi4_modeling/README.md#organize-the-tree-rename-things)**—apply the same pattern when you add `Body_Bezel`, `Body_Shell`, etc.
+Use **one `.FCStd` document** for the whole console while you follow the course. **Prefer** spreadsheet objects as **direct children of the document** (siblings of your Bodies)—easier to read than nesting under a Body. **If your build will not reparent** a sheet or tree drags fail, **continue anyway:** expressions use **`SpreadsheetName.Alias`**, not the sheet’s parent in the tree. On some builds, the **second** sheet (**`Spreadsheet_Bezel`**) only appears if you **create `Body_Bezel` first** and insert the spreadsheet with that Body active—Module 3 documents that as **Path B**. Use **clear names** so Pi vs bezel vs shell data stay separate: e.g. **`Spreadsheet_Pi`** (Module 2) and **`Spreadsheet_Bezel`** (Module 3). **Rename** Bodies and major features the same way—Module 2 spells out **F2** renaming in **[Organize the tree (rename things)](02_pi4_modeling/README.md#organize-the-tree-rename-things)**; apply the pattern for `Body_Bezel`, `Body_Shell`, etc.
 
 ---
 
@@ -20,7 +20,7 @@ Course CAD values are **millimeters (mm)** unless you change the FreeCAD documen
 
 ## Physical product (what you are designing toward)
 
-**arci** is a **retro-style console**: a **hollow shell** holds a **Raspberry Pi 4**, a **7″ touchscreen** on the **front**, **cooling** (40 mm fan over the Pi), **arcade controls** on a **user-facing panel**, and **cutouts** for **power/USB** (and similar) on the **outside**. You buy the electronics once; the printed/laser-cut parts are what you **fabricate from the CAD**.
+**arci** is a **retro-style console**: a **hollow shell** holds a **Raspberry Pi 4**, a **7″ LCD display** on the **front**, **cooling** (40 mm fan over the Pi), **arcade controls** on a **user-facing panel**, and **cutouts** for **power/USB** (and similar) on the **outside**. You buy the electronics once; the printed/laser-cut parts are what you **fabricate from the CAD**.
 
 ---
 

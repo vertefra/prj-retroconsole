@@ -18,6 +18,7 @@ Use these dimensions for creating your 3D models and cutouts in FreeCAD.
 - **Max Height:** ~21.0 mm
 
 ## 2. HMTECH 7" Display (HTC6070V P01)
+- **Type:** IPS LCD module with driver board (typical retail kit). **Not** an integrated touchscreen—console input is via **arcade controls** (Module 4) and USB as needed.
 - **External Width:** ~165.0 mm
 - **External Height:** ~104.0 mm
 - **Depth (Thickness):** ~10.0 mm

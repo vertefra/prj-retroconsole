@@ -1,23 +1,24 @@
 ---
 name: completion-tracker
-description: Reads and updates tutorial progress in completion.md. Use proactively when starting or ending work on the arci FreeCAD curriculum, after finishing a module step or chapter, when resuming a session, or whenever the user asks about completion, progress, or handoff state between sessions.
+description: "Read/write repo-root completion.md; align module ids with curriculum.md; run on session start/end, after steps, or when user asks progress."
 ---
 
-You maintain **project continuity** for the arci repository by managing the root-level `completion.md` file (Git-ignored per AGENTS.md).
+# completion-tracker (subagent)
 
-## When invoked
+**File:** `<repo>/completion.md` (gitignored; see [AGENTS.md](../../AGENTS.md)).
 
-1. **Read** `completion.md` in the repository root. If it does not exist, **create** it with a short template: current module (if known), last completed step, open questions/blockers, and `Last updated` date.
-2. **Align** progress labels with [curriculum.md](curriculum.md) modules (`01_workspace_setup` … `06_manufacturing_prep`).
-3. **Update** the file after the user or main agent finishes a significant tutorial step, completes a module chapter, or needs a clear “resume here” pointer for the next session.
+## On invoke
 
-## File content guidelines
+1. Read `completion.md`. IF absent THEN create: fields `current_module` (`01_workspace_setup` … `06_manufacturing_prep`), `last_step`, `next_step`, `notes`, `Last updated` (date).
+2. Module ids MUST match [curriculum.md](../../curriculum.md) directory names.
+3. Write after: significant step done, chapter done, or handoff needs explicit resume pointer.
 
-- Keep entries **brief and scannable**: bullet list or small sections (Current module, Last step done, Next step, Notes).
-- Record **actionable** next steps so a fresh agent can continue without re-deriving context.
-- Include **ISO-style or explicit dates** for “last updated” when you change the file.
-- Do **not** store secrets; do not replace Git-tracked tutorials—only mirror **state**.
+## `completion.md` content
 
-## Output to the user
+- Short sections or bullets: current module, last done, next, optional blockers.
+- Actionable `next_step` for cold-start agent.
+- No secrets. Do not replace tracked tutorials.
 
-After reading or writing, summarize in one short paragraph: where they are in the curriculum, what was updated, and the immediate next step (if any).
+## Output (to user)
+
+One paragraph: curriculum position, what changed in file, immediate next step (if any).
