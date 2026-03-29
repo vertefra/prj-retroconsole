@@ -1,6 +1,7 @@
 # Module 4: Cooling and Controls
 
-Integrating active cooling (iUniker fan) and arcade inputs.
+## What you're building
+Two parts of the **user-facing hardware**: a **mount for the iUniker 40 mm fan** (airflow over the Pi) and the **arcade control layout**—hole pattern and spacing for **Qenker-style buttons** on the control surface. Together they define **cooling and input** in the same assembly as the Pi and display.
 
 ## Step 1: Fan Mounting
 - **Action:** Sketch a 40x40mm square for the iUniker fan footprint.

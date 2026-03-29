@@ -1,6 +1,7 @@
 # Module 6: Manufacturing Prep
 
-Exporting and validating your design.
+## What you're building
+No new design features here—you **verify** the finished assembly (clearances, collisions) and **export** geometry for **3D printing** (e.g. `.STL`) or **2D fabrication** (e.g. `.DXF`). The output is **files a printer or shop can use**, plus confidence the model won’t fail when built.
 
 ## Step 1: Inspection
 - **Action:** Use the `Inspection` workbench to check for part collisions.

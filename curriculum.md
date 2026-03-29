@@ -2,6 +2,8 @@
 
 This tutorial is organized into modules. Each folder contains a detailed `README.md` for that step.
 
+**Big picture (recommended):** Read [architecture.md](architecture.md) once—how the Pi, screen, fan, controls, and shell relate before you dive into lesson details.
+
 ---
 
 ## 📚 Course Modules

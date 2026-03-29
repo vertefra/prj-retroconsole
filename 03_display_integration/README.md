@@ -1,6 +1,7 @@
 # Module 3: Display Integration
 
-Modeling the cutout and mount for the HMTECH 7" screen.
+## What you're building
+The **bezel / frame geometry** for the **HMTECH 7\" touchscreen**: the **opening the panel fits through**, clearance (tolerance), and how it **mounts** relative to the rest of arci. You are designing the **viewing window and surround** that integrates the display into the console, not the Pi board from Module 2.
 
 ## Step 1: Screen Dimensions
 - **Action:** Open your `Properties` spreadsheet.

@@ -6,8 +6,21 @@ This file provides a high-level map of the **arci** project repository.
 > **Interactive Step-by-Step Style:**
 > This repository is designed as a guided experience. Each module tutorial is structured as a sequence of granular steps. You should complete each step and verify the result before moving to the next.
 
+## `[clarification]` (user marker)
+
+When the user prefixes a message with **`[clarification]`**, they are asking about something that was **not clear from the prior explanation** in the tutorial or docs—not a casual follow-up.
+
+**Agent workflow:**
+
+1. **Answer** the clarification directly so the user can proceed.
+2. **Verify** whether the gap was real (e.g. ambiguous wording, missing step, assumed prior knowledge). If the user simply misread or skipped a step, fix understanding only; no doc change is required.
+3. **Improve the source** when verification shows the explanation was unclear: edit the relevant tutorial or index file (e.g. module `README.md`, `curriculum.md`) so future readers get the same clarity without needing to ask.
+
+Prefer the smallest edit that removes the ambiguity (one sentence, one step, or one cross-link).
+
 ## 🏗️ Core Documentation
 - **[README.md](README.md)**: Project overview, hardware list, and general introduction.
+- **[architecture.md](architecture.md)**: Holistic system architecture—CAD pieces vs real parts, how they fit inside the shell, and module mapping.
 - **[component_specs.md](component_specs.md)**: Technical reference for all hardware dimensions (Pi 4, Display, Fan, Controls).
 - **[curriculum.md](curriculum.md)**: The main entry point for the FreeCAD course, indexing all teaching modules.
 

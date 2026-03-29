@@ -1,6 +1,7 @@
 # Module 5: Enclosure Design
 
-Finalizing the arci shell.
+## What you're building
+The **outer shell** of arci: a **hollowed body** with chosen **wall thickness** and **cutouts** for ports (USB, power, etc.). This is the part that **wraps** the Pi, screen, fan, and controls into one **printable or fabricable** enclosure.
 
 ## Step 1: Shelling
 - **Action:** Use the `Thickness` tool in `PartDesign` to hollow out your main solid.
