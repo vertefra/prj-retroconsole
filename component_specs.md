@@ -6,11 +6,15 @@ Use these dimensions for creating your 3D models and cutouts in FreeCAD.
 > Always verify dimensions with physical calipers if possible, as manufacturer revisions may vary.
 
 ## 1. Raspberry Pi 4 Model B
-- **PCB Dimensions:** 85.0 mm x 56.0 mm
+- **PCB Dimensions:** 85.0 mm x 56.0 mm (nominal rectangle; actual outline has **rounded corners**).
+- **PCB corner radius:** 3.0 mm (per [mechanical drawing](https://datasheets.raspberrypi.com/rpi4/raspberry-pi-4-mechanical-drawing.pdf)).
 - **Mounting Holes:**
   - Diameter: 2.75 mm (Standard for M2.5 screws)
-  - Horizontal Spacing: 58.0 mm (center-to-center)
-  - Vertical Spacing: 49.0 mm (center-to-center)
+  - Horizontal Spacing: 58.0 mm (center-to-center between columns)
+  - Vertical Spacing: 49.0 mm (center-to-center between rows)
+  - **Edge insets (hole center to nearest PCB edge), per [Raspberry Pi 4 mechanical drawing](https://datasheets.raspberrypi.com/rpi4/raspberry-pi-4-mechanical-drawing.pdf):**
+    - **Along the 56 mm sides:** **3.5 mm** (bottom row to bottom edge, top row to top edge).
+    - **Along the 85 mm sides (asymmetric):** **3.5 mm** from one long edge to the **near** hole column, and **23.5 mm** from the **opposite** long edge to the **other** column — **not** 13.5 mm on both sides. Check the PDF against your board (e.g. USB/Ethernet side) so your CAD “left/right” matches reality.
 - **Max Height:** ~21.0 mm
 
 ## 2. HMTECH 7" Display (HTC6070V P01)

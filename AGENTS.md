@@ -18,6 +18,17 @@ When the user prefixes a message with **`[clarification]`**, they are asking abo
 
 Prefer the smallest edit that removes the ambiguity (one sentence, one step, or one cross-link).
 
+## Screenshots when helping with FreeCAD
+
+FreeCAD state is hard to infer from short text (“Pad is greyed”, “sketch is red”, “wrong tree”). **Ask the user for one or more screenshots** when:
+
+- The problem involves the **UI** (toolbars, task panel, which workbench), the **Model tree**, or **sketch constraints** / solver messages.
+- The user’s description is vague or could match several causes.
+
+**Useful shots (any subset):** the **main window** including **Model tree** and **3D view**; if a **task panel** or **constraint list** is open, include it; mention **FreeCAD version** if known.
+
+This reduces guesswork and matches how this project has already been debugged in practice.
+
 ## 🏗️ Core Documentation
 - **[README.md](README.md)**: Project overview, hardware list, and general introduction.
 - **[architecture.md](architecture.md)**: Holistic system architecture—CAD pieces vs real parts, how they fit inside the shell, and module mapping.
@@ -43,4 +54,4 @@ To maintain continuity between agent sessions, this repository uses a `completio
 > This file should be updated after every significant step or chapter completion to record the current state of the tutorial.
 
 ---
-*Last Updated: 2026-03-28*
+*Last Updated: 2026-03-29*

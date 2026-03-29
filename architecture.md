@@ -6,6 +6,12 @@ Read this **before** or **right after** Module 1 if you want the whole picture: 
 
 ---
 
+## FreeCAD file habit (naming the tree)
+
+Use **one `.FCStd` document** for the whole console while you follow the course, **one spreadsheet** at **document root** (not inside a Body), and **rename** Bodies and major features so the tree stays readable. Module 2 spells out suggested names and **F2** renaming in **[Organize the tree (rename things)](02_pi4_modeling/README.md#organize-the-tree-rename-things)**—apply the same pattern when you add `Body_Bezel`, `Body_Shell`, etc.
+
+---
+
 ## Units and scale
 
 Course CAD values are **millimeters (mm)** unless you change the FreeCAD document. The **Pi footprint** (85 × 56 mm) is **small on screen** because it matches a real PCB. The **visible console** is driven mainly by the **7″ display** (~165 × 104 mm face in [component_specs.md](component_specs.md)) plus **wall thickness** and **margins** you add in the enclosure.
