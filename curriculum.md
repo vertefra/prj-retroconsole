@@ -2,6 +2,8 @@
 
 This tutorial is organized into modules. Each folder contains a detailed `README.md` for that step.
 
+**AI agents** delivering this course: read the **[For AI agents](README.md#for-ai-agents-tutorial-delivery)** section in [README.md](README.md), then [AGENTS.md](AGENTS.md).
+
 **Big picture (recommended):** Read [architecture.md](architecture.md) once—how the Pi, screen, fan, controls, and shell relate before you dive into lesson details.
 
 ---

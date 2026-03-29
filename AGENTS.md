@@ -30,7 +30,7 @@ FreeCAD state is hard to infer from short text (“Pad is greyed”, “sketch i
 This reduces guesswork and matches how this project has already been debugged in practice.
 
 ## 🏗️ Core Documentation
-- **[README.md](README.md)**: Project overview, hardware list, and general introduction.
+- **[README.md](README.md)**: Project overview, hardware list, **For AI agents** (tutorial ingestion, `completion.md`, `completion-tracker` subagent, curriculum feedback).
 - **[architecture.md](architecture.md)**: Holistic system architecture—CAD pieces vs real parts, how they fit inside the shell, and module mapping.
 - **[component_specs.md](component_specs.md)**: Technical reference for all hardware dimensions (Pi 4, Display, Fan, Controls).
 - **[curriculum.md](curriculum.md)**: The main entry point for the FreeCAD course, indexing all teaching modules.
