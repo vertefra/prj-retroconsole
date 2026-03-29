@@ -8,7 +8,7 @@ No new design features here—you **verify** the finished assembly (clearances, 
 - **Goal:** Ensure the Pi 4 doesn't hit the joystick.
 
 ## Step 2: Exporting
-- **Action:** Select your final Body and export as `.STL` (for printing) or `.DXF` (for laser cutting).
+- **Action:** Select each Body you need to fabricate (e.g. **`Body_Shell`**, **`Body_Bezel`**, **`Body_FanMount`**, **`Body_ControlPanel`**) and export as `.STL` (for printing) or `.DXF` (for laser cutting).
 - **Goal:** Ready for physical fabrication.
 
 ---

@@ -43,7 +43,7 @@ A **readable Model tree** is part of the workflow: you always know which object 
 | Pad | `Pad_Pi_board` | After Step 4 |
 | Corner fillet(s) | `Fillet_Pi_corners` (one feature with four edges is ideal; if you have several fillets, rename or merge when you know how) | After filleting (Step 4) |
 
-Later modules add more **Bodies** (`Body_Bezel`, `Body_Shell`, …) using the same idea: **one Body per logical part**, **clear sketch / Pad names**.
+Later modules add more **Bodies** (`Body_Bezel`, `Body_FanMount`, `Body_ControlPanel`, `Body_Shell`, …) using the same idea: **one Body per logical part**, **clear sketch / Pad names**.
 
 ## Step 1: Parametric Spreadsheet
 - **Action:** Go to the `Spreadsheet` workbench and create a new spreadsheet.
